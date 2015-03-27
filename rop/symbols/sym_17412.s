@@ -19,7 +19,6 @@
 	AddSym	gPop_r0_pc, 0x2AC058
 	AddSym	gPop_r1_pc, 0x26A124
 	AddSym	gPop_r0__r4_pc, 0xDEADBEEF
-	AddSym	gPop_r0__r4_r7_pc, 0x1768FF
 	AddSym	hGsp, 0xDEADBEEF
 	AddSym	nn__gxlow__CTR__detail__GetInterruptReceiver, 0xDEADBEEF + 0x58
 	AddSym	s_dmc, 0x2A497F

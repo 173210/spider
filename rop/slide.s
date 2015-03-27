@@ -100,7 +100,7 @@ _start:
 	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 Self:
-	.word Self, gPop_pc, 0, 0, 0, 0, 0, 0, 0, unk, 0, 0, 0, 0, 0
+	.word Self, gPop_pc, 0, 0, 0, 0, 0, 0, 0, unk
 
 	.section .rodata
 gxCommand:

@@ -94,11 +94,10 @@ _start:
 	.section .rodata.init
 	.word 0, 0, 0, 0, _start+0x8C, 0, 0, 0, 0, 0
 	.word 0, 0, 0, 0, 0, 0, 0, _start, gPop_pc, gPop_pc, 0, 0, 0, 0, 0, 0
-	.word 0, 0, 0, gPop_r0_pc, _start+0x218, 0, 0, gPop_pc, 0, 0, 0, 0, 0, 0, 0, 0
+	.word 0, 0, 0, gPop_r0_pc, _start, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-Self:
-	.word Self, gPop_pc, 0, 0, 0, 0, 0, 0, 0, unk
+	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, unk
 
 	.section .rodata
 gxCommand:

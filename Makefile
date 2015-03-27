@@ -8,10 +8,10 @@ BINS = $(addsuffix .bin, $(ROPS))
 ELFS = $(addsuffix .elf, $(ROPS))
 OBJS = rop/slide.o $(addsuffix .o, $(addprefix rop/symbols/sym_, $(FIRMS)))
 
-all: mkhtml rop.html
+all: rop.html
 
-rop.html: $(BINS)
-	./mkhtml $^ > $@
+rop.html: mkhtml $(BINS)
+	./mkhtml $(BINS) > $@
 
 mkhtml: mkhtml.c
 	$(CC) $< -o $@

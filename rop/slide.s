@@ -72,10 +72,8 @@ _start:
 	.word 0xDEADC0DE	@ r4
 
 	.word gPop_lr_pc	@ pc: pop {lr, pc}
-	.word gPop_pc	@ lr: pop {pc}
+	.word gPop_r0_pc	@ lr: pop {r0, pc}
 	.word fGSPGPU_FlushDataCache	@ pc
-
-	.word gPop_r0_pc	@ pc: pop {r0, pc}
 	.word nn__gxlow__CTR__detail__GetInterruptReceiver	@ r0
 
 	.word gPop_r1_pc	@ pc: pop {r1, pc}

@@ -8,9 +8,9 @@ BINS = $(addsuffix .bin, $(ROPS))
 ELFS = $(addsuffix .elf, $(ROPS))
 OBJS = rop/slide.o $(addsuffix .o, $(addprefix rop/symbols/sym_, $(FIRMS)))
 
-all: rop.html
+all: spider.html
 
-rop.html: mkhtml $(BINS)
+spider.html: mkhtml $(BINS)
 	./mkhtml $(BINS) > $@
 
 mkhtml: mkhtml.c
@@ -23,4 +23,4 @@ rop/rop_%.elf: rop/slide.o rop/symbols/sym_%.o
 	$(LD) -T rop/linker.x $^ -o $@
 
 clean:
-	rm -f mkhtml rop.html $(BINS) $(ELFS) $(OBJS)
+	rm -f spider.html mkhtml $(BINS) $(ELFS) $(OBJS)

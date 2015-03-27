@@ -19,6 +19,7 @@
 	AddSym	gPop_r0_pc, 0x10C2Fc
 	AddSym	gPop_r1_pc, 0x228AF4
 	AddSym	gPop_r0__r4_pc, 0x10B5B4
+	AddSym	dstPa, 0x19592000
 	AddSym	entry, 0x08B88400
 	AddSym	hGsp, 0x3DA72C
 	AddSym	nn__gxlow__CTR__detail__GetInterruptReceiver, 0x3D7C40 + 0x58

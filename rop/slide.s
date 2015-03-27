@@ -22,8 +22,6 @@
 
 BUFFER_LOC = 0x18410000
 CODE_SIZE = 0x00004000
-CODE_TARGET = 0x19592000
-CODE_JUMP = 0x009D2000
 
 @---------------------------------------------------------------------------------
 	.section .rodata.rop
@@ -88,7 +86,7 @@ _start:
 	.word 0x00000000	@ r1
 
 	.word gPop_lr_pc	@ pc: pop {lr, pc}
-	.word CODE_JUMP	@ lr
+	.word 0x9D2000	@ lr: Destination virtual address
 	.word fSvcSleepThread	@ pc: svc #10; bx lr
 
 	.section .rodata.init
@@ -104,7 +102,7 @@ Self:
 gxCommand:
 	.word 0x00000004	@ Command header (SetTextureCopy)
 	.word BUFFER_LOC
-	.word CODE_TARGET
+	.word dstPa
 	.word CODE_SIZE
 	.word 0xFFFFFFFF	@ Dim in
 	.word 0xFFFFFFFF	@ Dim out

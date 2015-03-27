@@ -23,3 +23,4 @@
 	AddSym	hGsp, 0x3DA72C
 	AddSym	nn__gxlow__CTR__detail__GetInterruptReceiver, 0x3D7C40 + 0x58
 	AddSym	s_dmc, 0x1050B3
+	AddSym	unk, 0x130344

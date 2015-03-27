@@ -23,3 +23,4 @@
 	AddSym	hGsp, 0xDEADBEEF
 	AddSym	nn__gxlow__CTR__detail__GetInterruptReceiver, 0xDEADBEEF + 0x58
 	AddSym	s_dmc, 0x2A497F
+	AddSym	unk, 0x2D5240

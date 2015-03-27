@@ -48,7 +48,6 @@ _start:
 	.word 0xDEADBEEF	@ r5
 	.word 0xDEADBEEF	@ r6
 	.word 0xDEADBEEF	@ r7
-	.word gPop_pc	@ pc: pop {pc}
 
 	.word gPop_r0__r4_pc	@ pc: pop {r0-r4, pc}
 	.word 0x08F10000	@ r0: File handle
@@ -83,20 +82,16 @@ _start:
 	.word gxCommand	@ r1
 
 	.word gPop_lr_pc	@ pc: pop {lr, pc}
-	.word gPop_pc	@ lr: pop {pc}
+	.word gPop_r0_pc	@ lr: pop {r0, pc}
 	.word f_nn__gxlow__CTR__CmdReqQueueTx__TryEnqueue	@ pc
-
-	.word gPop_r0_pc	@ pc: pop {r0, pc}
 	.word 0x3B9ACA00	@ r0: 1 Second
 
 	.word gPop_r1_pc	@ pc: pop {r1, pc}
 	.word 0x00000000	@ r1
 
 	.word gPop_lr_pc	@ pc: pop {lr, pc}
-	.word gPop_pc	@ lr: pop {pc}
+	.word CODE_JUMP	@ lr
 	.word fSvcSleepThread	@ pc: svc 10; bx lr
-
-	.word CODE_JUMP	@ pc
 
 	.section .rodata.init
 	.word 0, 0, 0, 0, _start+0x8C, 0, 0, 0, 0, 0

@@ -36,7 +36,7 @@ _start:
 
 	.word gPop_r0__r4_pc	@ pc: pop {r0-r4, pc}
 	.word 0x08F10000	@ r0: File handle
-	.word FileName	@ r1
+	.word path	@ r1
 	.word 0x00000001	@ r2: Permission
 	.word 0xDEADBEEF	@ r3
 	.word 0xDEADBEEF	@ r4
@@ -107,8 +107,3 @@ gxCommand:
 	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 Self:
 	.word Self, gPop_pc, 0, 0, 0, 0, 0, 0, 0, unk
-
-	.section .rodata
-
-FileName:
-	.string16 "dmc:/code.bin"

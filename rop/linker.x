@@ -8,7 +8,7 @@ SECTIONS
 		KEEP(*(.rodata.rop))
 		. = 244;
 		KEEP(*(.rodata.init))
-		*(.rodata)
-		. = 768;
+		. = 544;
 	}
+	path = .;
 }

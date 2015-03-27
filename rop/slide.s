@@ -30,44 +30,44 @@ _start:
 	.word s_dmc	@ r0: "dmc:"
 
 	.word gFS_MountSdmc	@ pc: bl FS_MountSdmc; pop {r3-r5, pc}
-	.word 0xDEADBEEF	@ r3
-	.word 0xDEADBEEF	@ r4
-	.word 0xDEADBEEF	@ r5
+	.word 0x00200020	@ r3
+	.word 0x00200020	@ r4
+	.word 0x00200020	@ r5
 
 	.word gPop_r0__r4_pc	@ pc: pop {r0-r4, pc}
 	.word 0x08F10000	@ r0: File handle
 	.word path	@ r1
 	.word 0x00000001	@ r2: Permission
-	.word 0xDEADBEEF	@ r3
-	.word 0xDEADBEEF	@ r4
+	.word 0x00200020	@ r3
+	.word 0x00200020	@ r4
 
 	.word gIFile_Open	@ pc: bl IFile_Open; pop {r4-r7, pc}
-	.word 0xDEADBEEF	@ r4
-	.word 0xDEADBEEF	@ r5
-	.word 0xDEADBEEF	@ r6
-	.word 0xDEADBEEF	@ r7
+	.word 0x00200020	@ r4
+	.word 0x00200020	@ r5
+	.word 0x00200020	@ r6
+	.word 0x00200020	@ r7
 
 	.word gPop_r0__r4_pc	@ pc: pop {r0-r4, pc}
 	.word 0x08F10000	@ r0: File handle
 	.word 0x08F10020	@ r1: Address to store the size of bytes read
 	.word BUFFER_LOC	@ r2
 	.word CODE_SIZE	@ r3: size
-	.word 0xDEADBEEF	@ r4
+	.word 0x00200020	@ r4
 
 	.word gIFile_Read	@ pc: bl IFile_Read; pop {r4-r9, pc}
-	.word 0xDEADBEEF	@ r4
-	.word 0xDEADBEEF	@ r5
-	.word 0xDEADBEEF	@ r6
-	.word 0xDEADBEEF	@ r7
-	.word 0xDEADBEEF	@ r8
-	.word 0xDEADBEEF	@ r9
+	.word 0x00200020	@ r4
+	.word 0x00200020	@ r5
+	.word 0x00200020	@ r6
+	.word 0x00200020	@ r7
+	.word 0x00200020	@ r8
+	.word 0x00200020	@ r9
 
 	.word gPop_r0__r4_pc	@ pc: pop {r0-r4, pc}
 	.word hGsp	@ r0: GSP handle
 	.word 0xFFFF8001	@ r1: kProcess handle
 	.word BUFFER_LOC	@ r2
 	.word CODE_SIZE	@ r3
-	.word 0xDEADC0DE	@ r4
+	.word 0x00200020	@ r4
 
 	.word gPop_lr_pc	@ pc: pop {lr, pc}
 	.word gPop_r0_pc	@ lr: pop {r0, pc}

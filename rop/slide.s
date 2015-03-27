@@ -89,16 +89,6 @@ _start:
 	.word 0x9D2000	@ lr: Destination virtual address
 	.word fSvcSleepThread	@ pc: svc #10; bx lr
 
-	.section .rodata.init
-	.word 0, 0, 0, 0, _start+0x8C, 0, 0, 0, 0, 0
-	.word 0, 0, 0, 0, 0, 0, 0, _start, gPop_pc, gPop_pc, 0, 0, 0, 0, 0, 0
-	.word 0, 0, 0, gPop_r0_pc, _start+0x218, 0, 0, gPop_pc, 0, 0, 0, 0, 0, 0, 0, 0
-	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-Self:
-	.word Self, gPop_pc, 0, 0, 0, 0, 0, 0, 0, unk
-
-	.section .rodata
 gxCommand:
 	.word 0x00000004	@ Command header (SetTextureCopy)
 	.word BUFFER_LOC
@@ -108,6 +98,17 @@ gxCommand:
 	.word 0xFFFFFFFF	@ Dim out
 	.word 0x00000008	@ Flags
 	.word 0x00000000	@ Unused
+
+	.section .rodata.init
+	.word _start+0x8C, 0, 0, 0, 0, 0
+	.word 0, 0, 0, 0, 0, 0, 0, _start, gPop_pc, gPop_pc, 0, 0, 0, 0, 0, 0
+	.word 0, 0, 0, gPop_r0_pc, _start+0x218, 0, 0, gPop_pc, 0, 0, 0, 0, 0, 0, 0, 0
+	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+Self:
+	.word Self, gPop_pc, 0, 0, 0, 0, 0, 0, 0, unk
+
+	.section .rodata
 
 FileName:
 	.string16 "dmc:/code.bin"

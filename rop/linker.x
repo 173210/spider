@@ -6,7 +6,7 @@ SECTIONS
 	. = entry;
 	.rodata : {
 		KEEP(*(.rodata.rop))
-		. = 228;
+		. = 244;
 		KEEP(*(.rodata.init))
 		*(.rodata)
 		. = 768;

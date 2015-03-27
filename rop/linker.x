@@ -3,7 +3,7 @@ OUTPUT_ARCH(arm)
 
 SECTIONS
 {
-	. = 0x08B47400;
+	. = entry;
 	.rodata : {
 		KEEP(*(.rodata.rop))
 		. = 228;

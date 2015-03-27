@@ -1,3 +1,5 @@
+mkhtml
+
 *.o
 *.elf
 *.bin

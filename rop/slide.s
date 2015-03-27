@@ -91,7 +91,7 @@ _start:
 
 	.word gPop_lr_pc	@ pc: pop {lr, pc}
 	.word CODE_JUMP	@ lr
-	.word fSvcSleepThread	@ pc: svc 10; bx lr
+	.word fSvcSleepThread	@ pc: svc #10; bx lr
 
 	.section .rodata.init
 	.word 0, 0, 0, 0, _start+0x8C, 0, 0, 0, 0, 0

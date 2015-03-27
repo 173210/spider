@@ -125,7 +125,7 @@ int main(int argc, const char *argv[])
 		fclose(fp);
 	}
 
-	printf(					"}[n.substring(n.lastIndexOf('/')+1,n.lastIndexOf('.'))].replace(':','dmc:/'+l+Array(26-l.length).join('\\0'))+Array(74).join('\\0'),"
+	printf(						"}[n.substring(n.lastIndexOf('/')+1,n.lastIndexOf('.'))].replace(':','dmc:/'+l+Array(26-l.length).join('\\0'))+Array(74).join('\\0'),"
 							"s=q.length-1;"
 							"for(j=1;j<410;j++){"
 								"i=4*j/s,a=Array(j);"

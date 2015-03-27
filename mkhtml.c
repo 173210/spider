@@ -59,9 +59,7 @@ int main(int argc, const char *argv[])
 						"d.title='Spider Exploit';"
 
 						"n=navigator.userAgent;"
-						"if(n.indexOf('Nintendo 3DS')==-1)"
-							"q=null;"
-						"else{"
+						"if(n.indexOf('Nintendo 3DS')!=-1){"
 							"q={");
 
 	path = argv;
@@ -103,21 +101,17 @@ int main(int argc, const char *argv[])
 	}
 
 	printf(					"}[n.substring(n.lastIndexOf('/')+1,n.lastIndexOf('.'))];"
-						"}"
-						"if(q){"
-							"u=decodeURI(d.URL);"
-							"g=u.split('?');"
-							"l=g[1];"
-							"w.onload=l&&l.length<108?"
-								"function(){"
-									"d.body.childNodes[0].innerHTML='Loading '+l+'<iframe height=0 src=#/>';"
-								"}:"
-								"function(){"
-									"d.body.childNodes[0].innerHTML='Usage: '+g[0]+'?PATH';"
-								"}"
-						"}else{"
-							"w.onload=function(){"
-								"d.body.childNodes[0].innerHTML='Your device is not supported.';"
+							"if(q){"
+								"u=decodeURI(d.URL);"
+								"g=u.split('?');"
+								"l=g[1];"
+								"w.onload=l&&l.length<108?"
+									"function(){"
+										"d.body.childNodes[0].innerHTML='Loading '+l+'<iframe height=0 src=#/>';"
+									"}:"
+									"function(){"
+										"d.body.childNodes[0].innerHTML='Usage: '+g[0]+'?PATH';"
+									"}"
 							"}"
 						"}"
 					"}else{"
@@ -150,7 +144,7 @@ int main(int argc, const char *argv[])
 				"</script>"
 			"</head>"
 			"<body>"
-				"<h1>.</h1>"
+				"<p>Your device is not supported.</p>"
 			"</body>"
 		"</html>");
 

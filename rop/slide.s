@@ -84,7 +84,7 @@ _start:
 	.word gPop_lr_pc	@ pc: pop {lr, pc}
 	.word gPop_r0_pc	@ lr: pop {r0, pc}
 	.word f_nn__gxlow__CTR__CmdReqQueueTx__TryEnqueue	@ pc
-	.word 0x3B9ACA00	@ r0: 1 Second
+	.word 1073741824	@ r0: Time for sleep in microseconds
 
 	.word gPop_r1_pc	@ pc: pop {r1, pc}
 	.word 0x00000000	@ r1
